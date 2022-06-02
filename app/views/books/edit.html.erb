@@ -1,0 +1,28 @@
+<%= render 'form', book: @book %>
+
+<h1>Editing Book</h1>
+<%= flash[:notice] %>
+
+<%= form_with model: @book, local:true, method: :patch do |f| %>
+
+<form>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Update Book '%>
+  </div>
+<% end %>
+</form>
+
+<%= link_to 'Show', @book, class: "show_#{@book.id}" %> |
+<%= link_to 'Back', books_path, class: "back" %>
+
