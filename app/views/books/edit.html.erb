@@ -1,11 +1,12 @@
-<%= render 'form', book: @book %>
+
 
 <h1>Editing Book</h1>
 <%= flash[:notice] %>
+<%= render 'form', book: @book %>
 
 <%= form_with model: @book, local:true, method: :patch do |f| %>
 
-<form>
+
 
   <div class="field">
     <%= f.label :title %>
@@ -21,7 +22,7 @@
     <%= f.submit 'Update Book '%>
   </div>
 <% end %>
-</form>
+
 
 <%= link_to 'Show', @book, class: "show_#{@book.id}" %> |
 <%= link_to 'Back', books_path, class: "back" %>
